@@ -1,0 +1,9 @@
+/**app.wxss**/
+page {
+  -webkit-font-smoothing: antialiased;
+  font-family: "PingHei","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+  font-size: 28rpx;
+  background: #F4F6F9;
+  margin: 0;
+  padding: 0
+}

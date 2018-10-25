@@ -1,0 +1,73 @@
+<view class='index-list'>
+
+  <view class='tab-list-container'>
+    <view class='tab-list-type'>
+    <!-- 一条数据 -->
+      <view class='tab-list-item'>
+        <view class='list-title'>下单接口调优实战，性能提高10倍</view>
+        <view class='image-intro'>
+          <view class='list-intro'>最近公司的下单接口有些慢，老板担心无法支撑双11，想让我优化一把，但是前提是不允许大改，因为下单接口太复杂了，如果改动太大，怕有风险。另外开发成本和测试成本也非常大。对于这种有挑战性的任务，我向来是非常喜欢的，因为在解决问题的过程中，可以学习到很多东西。 当时我只是知道下单接口…</view>
+           <image src='/img/1.jpg' class='list-image'></image>
+        </view>
+          <view class='list-footer'>
+            <view class='list-other'>
+              <text>7</text>
+              <text>赞同 · </text>
+              <text>10</text>
+              <text>评论 · </text>
+              <text>关注问题</text>
+            </view>
+       
+              <image class='more' src='/img/more.png'></image>
+          
+        </view>
+
+      </view>
+    <!-- end -->
+     <!-- 一条数据 -->
+      <view class='tab-list-item'>
+        <view class='list-title'>下单接口调优实战，性能提高10倍</view>
+        <view class='image-intro'>
+          <view class='list-intro'>最近公司的下单接口有些慢，老板担心无法支撑双11，想让我优化一把，但是前提是不允许大改，因为下单接口太复杂了，如果改动太大，怕有风险。另外开发成本和测试成本也非常大。对于这种有挑战性的任务，我向来是非常喜欢的，因为在解决问题的过程中，可以学习到很多东西。 当时我只是知道下单接口…</view>
+           <image src='/img/1.jpg' class='list-image'></image>
+        </view>
+          <view class='list-footer'>
+            <view class='list-other'>
+              <text>7</text>
+              <text>赞同 · </text>
+              <text>10</text>
+              <text>评论 · </text>
+              <text>关注问题</text>
+            </view>
+          
+              <image class='more' src='/img/more.png'></image>
+        
+        </view>
+
+      </view>
+    <!-- end -->
+     <!-- 一条数据 -->
+      <view class='tab-list-item'>
+        <view class='list-title'>下单接口调优实战，性能提高10倍</view>
+        <view class='image-intro'>
+          <view class='list-intro'>最近公司的下单接口有些慢，老板担心无法支撑双11，想让我优化一把，但是前提是不允许大改，因为下单接口太复杂了，如果改动太大，怕有风险。另外开发成本和测试成本也非常大。对于这种有挑战性的任务，我向来是非常喜欢的，因为在解决问题的过程中，可以学习到很多东西。 当时我只是知道下单接口…</view>
+           <image src='/img/1.jpg' class='list-image'></image>
+        </view>
+          <view class='list-footer'>
+            <view class='list-other'>
+              <text>7</text>
+              <text>赞同 · </text>
+              <text>10</text>
+              <text>评论 · </text>
+              <text>关注问题</text>
+            </view>
+          
+              <image class='more' src='/img/more.png'></image>
+          
+        </view>
+
+      </view>
+    <!-- end -->
+    </view>
+  </view>
+</view>

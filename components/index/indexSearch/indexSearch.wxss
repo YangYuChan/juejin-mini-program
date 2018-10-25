@@ -1,0 +1,62 @@
+.index-header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #f44250;
+  padding-top: 20rpx;
+  color: #666;
+}
+.search-box {
+  margin: 0 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 70rpx;
+  border-radius: 10rpx;
+  background-color: #ffffff;
+  font-size: 32rpx;
+}
+.search-icon {
+  width: 40rpx;
+  height: 40rpx;
+  background-size: cover;
+}
+.search-input {
+  display: block;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.questions-btn {
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+  border-left: 1px solid #ccc;
+}
+.questions-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+.index-header .tab-bar {
+  display: flex;
+  color: #ffffff;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  box-shadow: 4rpx 4rpx 7rpx #bbb;
+  background-color: #f44250;
+}
+.tab-bar .tab-bar-item{
+  width: 33.3%;
+  text-align: center
+}
+.tab-bar .tab-bar-item .item-text {
+  display: block;
+  padding-bottom: 20rpx;
+}
+.tab-bar .selected {
+  border-bottom: 4rpx solid #ffdd00;
+}
