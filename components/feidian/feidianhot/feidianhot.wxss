@@ -1,0 +1,35 @@
+/* components/feidian/feidiantop/feidianhot.wxss */
+.swiper-item{
+  background-color: #fff;
+  margin: 20rpx 0 20rpx 20rpx;
+}
+.hot-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 30rpx 20rpx 20rpx;
+}
+.hot-title .hot-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 6rpx;
+}
+.hot-content {
+  padding: 0rpx 20rpx 30rpx;
+  padding-top: 0;
+  display: flex;
+  justify-content: space-around;
+}
+.hot-content .content {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-line-clamp:3; /*控制多行文本的行数*/ 
+  margin-right: 10rpx;
+}
+.content-image {
+  width: 150rpx;
+}

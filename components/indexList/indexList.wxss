@@ -1,0 +1,69 @@
+.index-list-item {
+  background-color: #ffffff;
+  padding: 20rpx 30rpx;
+  margin-bottom: 20rpx;
+}
+.user-info,.user-info-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-info .user-photo {
+  width: 40rpx;
+  border-radius: 100%;
+  height: 40rpx;
+}
+.user-info .user-name {
+  margin-left: 10rpx;
+}
+.article-info {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 26rpx;
+}
+.article-image {
+  margin-left: 16rpx;
+}
+.article-image .image {
+  width: 136rpx;
+  height: 136rpx;
+}
+.article-title {
+  font-size: 32rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 20rpx;
+}
+.article-intro {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-line-clamp:2; /*控制多行文本的行数*/
+  padding-bottom: 8rpx;
+}
+.user-info .user-classify,
+.article-intro,
+.like-num,
+.comment-num {
+  color: #abb4bf;
+}
+.index-item-bottom {
+  margin: 20rpx 0 0;
+  display: flex;
+  justify-content: flex-start;
+}
+.index-item-bottom .like-icon,
+.index-item-bottom .comment-icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 6rpx;
+}
+.comment-icon {
+  margin-left: 40rpx;
+}

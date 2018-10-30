@@ -1,0 +1,77 @@
+.feidian-list .feidian-item {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  padding-top: 20rpx;
+}
+.item-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 30rpx;
+}
+.item-top .photo{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+.item-top .auth-other {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-top .auth-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 50rpx;
+  margin-left: 10rpx;
+  justify-content: space-between;
+}
+
+.item-top .auth-info .auth-job {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #999;
+}
+.item-top .follow{
+  margin-right: 0;
+  color: #999;
+  border-color: #999;
+}
+.item-bottom {
+  border-top: 1px solid #eee;
+  display: flex;
+  color: #999;
+  height: 80rpx;
+  justify-content: space-around;
+}
+.item-content {
+  padding: 30rpx;
+}
+.item-content .content {
+  margin-bottom: 20rpx;
+}
+.item-content .image-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+}
+.item-content .image-list .image-item {
+  width: 33.3%;
+  margin-bottom: 6rpx;
+  padding-left: 6rpx;
+  box-sizing: border-box;
+}
+.item-bottom .image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 8rpx;
+}
+.bottom-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

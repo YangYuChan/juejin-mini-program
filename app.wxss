@@ -7,3 +7,7 @@ page {
   margin: 0;
   padding: 0
 }
+button[type=default][plain] {
+  color: #ccc;
+  border-color: #ccc;
+}

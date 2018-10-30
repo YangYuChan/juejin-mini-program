@@ -13,7 +13,15 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
-
+// 判断是否登录
+let ifLogined = () => {
+  let auth = wx.getStorageSync('auth') || {}
+  if(auth.token && auth.uid) {
+    return auth;
+  }
+  return false;
+}
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  ifLogined: ifLogined
 }

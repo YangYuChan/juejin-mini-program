@@ -34,6 +34,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    config: {
+      apiRecommendUrl:'https://www.zhihu.com/api/v3'
+    }
   }
 })

@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "indexSearch":"/components/index/indexSearch/indexSearch",
-    "indexList":"/components/index/indexList/indexList"
-  }
-}

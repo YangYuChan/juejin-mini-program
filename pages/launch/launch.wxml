@@ -1,0 +1,10 @@
+<view class='container'>
+<image src='/img/launch_bcg.png' class='launch_bcg'></image>
+<view class='top'>
+ <image src='/img/launch_diamond.png'  mode='widthFix' class='top-image'></image>
+  <view class='top-slogan'>相信科技的力量</view>
+</view>
+<view class='footer'>
+  <image src='/img/launch_bottom.png'  mode='widthFix' class='footer-image'></image>
+</view>
+</view>

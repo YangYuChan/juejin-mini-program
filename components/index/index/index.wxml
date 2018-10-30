@@ -1,5 +1,0 @@
-<!--components/index/index/index.wxml-->
-<view class='info'>
-  <indexSearch></indexSearch>
-  <indexList></indexList>
-</view>

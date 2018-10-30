@@ -1,0 +1,4 @@
+<view class="container">
+  <feidianhot></feidianhot>
+  <feidianlist></feidianlist>
+</view>

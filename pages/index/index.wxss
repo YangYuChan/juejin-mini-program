@@ -1,21 +1,19 @@
 /**index.wxss**/
-.userinfo {
+.no-login {
+  background-color: #ffffff;
+  padding: 30rpx;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 20rpx;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.no-login .top {
+  font-size: 30rpx;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.no-login .bottom {
+  color: #666;
 }
-
-.usermotto {
-  margin-top: 200px;
+.no-login-btn {
+  color: #3281ff;
+  font-size: 32rpx;
 }

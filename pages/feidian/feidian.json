@@ -1,0 +1,6 @@
+{
+  "usingComponents":{
+      "feidianhot":"/components/feidian/feidianhot/feidianhot",
+      "feidianlist": "/components/feidian/feidianlist/feidianlist"
+  }
+}

@@ -1,53 +1,55 @@
 {
   "pages": [
+    "pages/feidian/feidian",
     "pages/index/index",
-    "pages/idea/idea",
-    "pages/market/market",
-    "pages/notice/notice",
+    "pages/launch/launch",
+    "pages/xiaoce/xiaoce",
+    "pages/search/search",
     "pages/user/user",
+    "pages/login/login",
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#f44250",
-    "navigationBarTitleText": "知乎",
+    "navigationBarBackgroundColor": "#3281ff",
+    "navigationBarTitleText": "掘金",
     "navigationBarTextStyle": "#ffffff"
   },
   "tabBar": {
     "color": "#666666",
-    "selectedColor": "#DD0000",
+    "selectedColor": "#3281ff",
     "borderStyle": "#ffffff",
     "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "img/tab_home.png",
-        "selectedIconPath": "img/tab_selected_home.png"
+        "iconPath": "img/tab_home_normal.png",
+        "selectedIconPath": "img/tab_home.png"
       },
       {
-        "pagePath": "pages/idea/idea",
-        "text": "想法",
-        "iconPath": "img/tab_idea.png",
-        "selectedIconPath": "img/tab_selected_idea.png"
+        "pagePath": "pages/search/search",
+        "text": " 搜索",
+        "iconPath": "img/tab_explore_normal.png",
+        "selectedIconPath": "img/tab_explore.png"
       },
       {
-        "pagePath": "pages/market/market",
-        "text": "市场",
-        "iconPath": "img/tab_market.png",
-        "selectedIconPath": "img/tab_selected_market.png"
+        "pagePath": "pages/feidian/feidian",
+        "text": "沸点",
+        "iconPath": "img/tab_feidian_normal.png",
+        "selectedIconPath": "img/tab_feidian.png"
       },
       {
-        "pagePath": "pages/notice/notice",
-        "text": "通知",
-        "iconPath": "img/tab_notice.png",
-        "selectedIconPath": "img/tab_selected_notice.png"
+        "pagePath": "pages/xiaoce/xiaoce",
+        "text": "小册",
+        "iconPath": "img/tab_xiaoce_normal.png",
+        "selectedIconPath": "img/tab_xiaoce.png"
       },
       {
         "pagePath": "pages/user/user",
         "text": "我的",
-        "iconPath": "img/tab_user.png",
-        "selectedIconPath": "img/tab_selected_user.png"
+        "iconPath": "img/tab_profile_normal.png",
+        "selectedIconPath": "img/tab_profile.png"
       }
     ]
   }
