@@ -1,0 +1,32 @@
+.search-list {
+  background-color: #ffffff;
+  margin-bottom: 20rpx;
+}
+.hot-title,
+.list-item {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  padding:24rpx 30rpx;
+  justify-content: flex-start;
+}
+.hot-title .hot-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+.hot-title .hot-text {
+  font-size: 32rpx;
+  margin-left: 14rpx;
+}
+.list-item {
+  justify-content: space-around
+}
+.list-item .article-img .image {
+  width: 150rpx;
+  height: 150rpx;
+  margin-left: 10rpx;
+}
+.list-item .article-other {
+  font-size: 24rpx;
+  margin-top: 14rpx;
+  color: #999;
+}

@@ -1,4 +1,6 @@
 {
+  "navigationBarTitleText": "沸点",
+  "enablePullDownRefresh": true,
   "usingComponents":{
       "feidianhot":"/components/feidian/feidianhot/feidianhot",
       "feidianlist": "/components/feidian/feidianlist/feidianlist"
