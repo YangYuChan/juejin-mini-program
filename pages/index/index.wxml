@@ -1,13 +1,40 @@
 <!--index.wxml-->
+<wxs module="filters" src="../../filter/filter.wxs"></wxs>
 <view class="container">
-<navigator url="/pages/login/login" hover-class="navigator-hover" class='no-login'>
+<navigator url="/pages/login/login" wx:if='{{!logined}}' hover-class="navigator-hover" class='no-login'>
   <view class='no-login-text'>
     <view class='top'>登录账号</view>
     <view class='bottom'>收藏文字，同步阅读记录，数据永不丢失</view>
   </view>
   <view class='no-login-btn'>登录</view>
   </navigator>
+  <view class='index-hot'>
+    <view class='search-list'>
+  <view class='hot-title'>
+    <image src='/img/ic_hot_home.png' class='hot-icon'></image>
+    <text class='hot-text'>热门推荐</text>
+  </view>
+  <view class='hot-list'>
+    <view class='list-item' wx:for='{{hotRecomment}}' item='{{item}}' wx:key='{{index}}'>
+      <view class='article-text'>
+        <view class='article-name'>{{item.title}}</view>
+        <view class='article-other'>
+        <image class='hot-icon' src='/img/ic_collection.png'></image>
+        <text class='hot-num'>{{item.collectionCount || '喜欢'}}</text>
+        <image class='hot-icon' src='/img/home_hot.png'></image>
+        <text class='hot-num'>{{item.user.username}}</text>
+        <image  class='hot-icon' src='/img/ic_time.png'></image>
+        <text class='hot-num'>{{filters.timeBefore(item.createdAt)}}</text>
+        </view>
+      </view>
+      <view class='article-img'>
+      <image src='{{item.screenshot}}' class='image' mode='aspectFill'></image>
+      </view>
+    </view>
+  </view>
+</view>
+  </view>
   <view class='index-list'>
-    <indexList wx:for='{{5}}'></indexList>
+    <indexList></indexList>
   </view>
 </view>

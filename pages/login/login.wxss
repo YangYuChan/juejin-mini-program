@@ -1,0 +1,52 @@
+.login-bg {
+  position: fixed;
+  width:100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #3281ff;
+}
+.login-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.app-name {
+  position: absolute;
+  bottom: 80rpx;
+  text-align: center;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  color: #fff;
+}
+.login-logo {
+  text-align: center
+}
+.logo {
+  width: 100rpx;
+}
+.login-content {
+  margin: 30rpx;
+}
+.form-control {
+  background-color: #fff;
+  margin: 40rpx 0 20rpx;
+  border-radius: 4rpx;
+}
+.email,
+.password {
+  padding: 24rpx;
+}
+.email {
+  border-bottom: 1px solid #eee;
+}
+.login-form .login-btn[type=default] {
+  background:rgba(0, 0, 0, .1);
+  color: #fff;
+}

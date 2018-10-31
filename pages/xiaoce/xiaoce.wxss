@@ -1,0 +1,57 @@
+.xc-list {
+  background-color: #fff;
+}
+.xc-item {
+  border-bottom: 1px solid #eee;
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.xc-image {
+  width: 140rpx;
+  height: 182rpx;
+  display: inline-block;
+  box-shadow: 3rpx 4rpx 12rpx #ccc;
+}
+.xc-message {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  height: 182rpx;
+  align-items: center;
+}
+.xc-middle {
+  margin: 0 20rpx;
+  height: 182rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.xc-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-line-clamp:2; /*控制多行文本的行数*/
+}
+.xc-auth {
+  font-size: 24rpx;
+}
+.xc-other {
+  font-size: 24rpx;
+  color: #bbb;
+}
+.xc-other .num {
+  margin-right: 20rpx;
+}
+.xc-price {
+  color: #3281ff;
+  padding: 16rpx 36rpx;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  background-color: rgb(241, 247, 254);
+}

@@ -1,0 +1,101 @@
+<view class="container">
+  <view class='user-top'>
+    <view class='top-wrapper'>
+      <image src='/img/empty_avatar_user.png' mode='widthFix' class='user-photo'></image>
+      <view class='user-info'>
+        <view class='info'>
+          <view class='sign-in'>登录/注册</view>
+          <view class='job-info'>添加职位 @添加公司</view>
+        </view>
+        <image src='/img/profile_arrow.png' class='go' mode='widthFix'></image>
+      </view>
+    </view>
+  </view>
+  <view class='user-content'>
+    <view class='user-list'>
+    <!-- item -->
+      <view class='operator-item'>
+        <image class='item-image' src='/img/ic_notification.png' mode='widthFix'></image>
+        <view class='item-text'>
+          <text class='font'>消息中心</text>
+          <text class='num'></text>
+        </view>
+      </view>
+    <!-- end -->
+    <!-- item -->
+      <view class='operator-item'>
+        <image class='item-image' src='/img/ic_heart_entry_bottom_full.png' mode='widthFix'></image>
+        <view class='item-text'>
+          <text class='font'>我喜欢的</text>
+          <text class='num'>0篇</text>
+        </view>
+      </view>
+    <!-- end -->
+    <!-- item -->
+      <view class='operator-item'>
+        <image class='item-image' src='/img/ic_collection_set.png' mode='widthFix'></image>
+        <view class='item-text'>
+          <text class='font'>收藏集</text>
+          <text class='num'>0个</text>
+        </view>
+      </view>
+    <!-- end -->
+    <!-- item -->
+      <view class='operator-item'>
+        <image class='item-image' src='/img/user_buy.png' mode='widthFix'></image>
+        <view class='item-text'>
+          <text class='font'>已购小册</text>
+          <text class='num'>0本</text>
+        </view>
+      </view>
+    <!-- end -->
+    <!-- item -->
+      <view class='operator-item'>
+        <image class='item-image' src='/img/user_liked_pin.png' mode='widthFix'></image>
+        <view class='item-text'>
+          <text class='font'>赞过的沸点</text>
+          <text class='num'>0个</text>
+        </view>
+      </view>
+    <!-- end -->
+    <!-- item -->
+      <view class='operator-item'> 
+        <image class='item-image' src='/img/view.png' mode='widthFix'></image>
+        <view class='item-text'>
+          <text class='font'>阅读过的文章</text>
+          <text class='num'>0篇</text>
+        </view>
+      </view>
+    <!-- end -->
+    <!-- item -->
+      <view class='operator-item'>
+        <image class='item-image' src='/img/tag.png' mode='widthFix'></image>
+        <view class='item-text'>
+          <text class='font'>标签管理</text>
+          <text class='num'>0个</text>
+        </view>
+      </view>
+    <!-- end -->
+    </view>
+    <view class='user-other'>
+      <view class='operator-item'>
+        <image class='item-image' src='/img/icon_feed_back.png' mode='widthFix'></image>
+        <view class='item-text'>
+          <text class='font'>意见反馈</text>
+        </view>
+      </view>
+      <view class='operator-item'>
+        <image class='item-image' src='/img/settings.png' mode='widthFix'></image>
+        <view class='item-text'>
+          <text class='font'>设置</text>
+        </view>
+      </view>
+      <view class='operator-item'>
+        <image class='item-image' src='/img/qrcode.png' mode='widthFix' style='width:34rpx;margin-left:8rpx;'></image>
+        <view class='item-text'>
+          <text class='font'>小程序码</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

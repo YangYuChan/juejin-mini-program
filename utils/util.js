@@ -16,12 +16,20 @@ const formatNumber = n => {
 // 判断是否登录
 let ifLogined = () => {
   let auth = wx.getStorageSync('auth') || {}
-  if(auth.token && auth.uid) {
+  if (auth.token && auth.userId) {
     return auth;
   }
   return false;
 }
+
+let isEmptyObject = (obj) => {
+  for(let i in obj){
+    return false;
+  }
+  return true;
+}
 module.exports = {
   formatTime: formatTime,
-  ifLogined: ifLogined
+  ifLogined: ifLogined,
+  isEmptyObject: isEmptyObject
 }

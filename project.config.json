@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.3.0",
 	"appid": "wx058fdad426e208b5",
-	"projectname": "zhihu",
+	"projectname": "juejin-mini-program",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

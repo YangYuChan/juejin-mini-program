@@ -1,12 +1,15 @@
 {
   "pages": [
-    "pages/search/search",
-    "pages/feidian/feidian",
     "pages/index/index",
-    "pages/launch/launch",
+    "pages/login/login",
+    
+    
     "pages/xiaoce/xiaoce",
     "pages/user/user",
-    "pages/login/login",
+    "pages/search/search",
+    "pages/feidian/feidian",
+    
+    "pages/launch/launch",
     "pages/logs/logs"
   ],
   "window": {

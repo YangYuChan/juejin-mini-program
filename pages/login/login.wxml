@@ -1,0 +1,22 @@
+<view class='container'>
+  <view class='login-bg'></view>
+  <view class='login-wrapper'>
+  <view class='login-content'>
+    <view class='login-logo'>
+    <image src='/img/ic_login_logo.png' class='logo' mode='widthFix'></image>
+    </view>
+    <form bindsubmit='commit'>
+      <view class='login-form'>
+      <view class='form-control'>
+        <input class='email' name='phoneNumber' placeholder='手机号/邮箱'></input>
+        <input class='password' name='password' type='password' placeholder='密码'></input>
+      </view>
+        <button class='login-btn' type='default' formType='submit'>登录</button>     
+      </view>
+     </form>
+  </view>
+    <view class='app-name'>
+      掘金·juejin.im
+    </view>
+  </view>
+</view>

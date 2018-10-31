@@ -1,0 +1,58 @@
+.user-top {
+  margin: 20rpx 0;
+  background-color: #fff;
+}
+.top-wrapper {
+  padding: 0 40rpx;
+}
+.top-wrapper,
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 180rpx;
+}
+.user-info {
+  width: 78%;
+}
+.top-wrapper .user-photo {
+  width: 90rpx;
+  height: 90rpx;
+}
+.user-info .sign-in {
+  font-size: 40rpx;
+}
+.user-info .job-info {
+  color: #abb4bf;
+  font-size: 24rpx;
+}
+.user-info .go {
+  width: 22rpx;
+}
+.user-list,
+.user-other {
+  background-color: #fff;
+  margin: 0 0 20rpx;
+}
+.operator-item {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  padding: 20rpx 40rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.operator-item .item-image {
+  width: 42rpx;
+}
+.operator-item .item-text {
+  width: 87%;
+  display: flex;
+  justify-content: space-between;
+}
+.operator-item .item-text .font {
+  font-size: 32rpx;
+}
+.operator-item .item-text .num {
+  font-size: 24rpx;
+  color: #abb4bf
+}

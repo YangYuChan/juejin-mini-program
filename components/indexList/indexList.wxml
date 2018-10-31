@@ -13,7 +13,7 @@
       <view class='article-intro'>奋斗没有意义，选择大于努力。 一个40岁老码农的人生总结 今年刚好 40 岁，在一家著名外企做到技术专家的位置，在亲戚朋友眼中，俨然已算半个“成功人士”，但内心深处，却无一刻不战战兢兢。我知道，自己就像一个风雨中的高跷人，哪怕一阵风，一个闪失，都会重重跌倒，甚至于再也爬不起来。…</view>
     </view>
     <view class='article-image'>
-      <image class='image'mode='widthFix' src='/img/entry_image_default.png'></image>
+      <image class='image'mode='aspectFill' src='/img/entry_image_default.png'></image>
     </view>
   </view>
   <view class='index-item-bottom'>

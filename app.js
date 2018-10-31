@@ -36,7 +36,9 @@ App({
   globalData: {
     userInfo: null,
     config: {
-      apiRecommendUrl:'https://www.zhihu.com/api/v3'
+      loginRequestUrlByMobile: 'https://juejin.im/auth/type/phoneNumber',
+      loginRequestUrlByEMail: 'https://juejin.im/auth/type/email',
+      timelineRequestUrl: 'https://timeline-merger-ms.juejin.im/v1', //热门推荐
     }
   }
 })
