@@ -1,26 +1,25 @@
-.search-list {
-  background-color: #ffffff;
-  margin-bottom: 20rpx;
-}
-.hot-title,
 .list-item {
   border-bottom: 1px solid #eee;
   display: flex;
+  flex: 1;
   padding:24rpx 30rpx;
   justify-content: flex-start;
 }
-.hot-title .hot-icon {
-  width: 40rpx;
-  height: 40rpx;
+.article-name {
+   display:-webkit-box;
+   text-overflow: ellipsis;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
 }
-.hot-title .hot-text {
-  font-size: 32rpx;
-  margin-left: 14rpx;
+.article-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
-.list-item {
-  justify-content: space-around
-}
-.list-item .article-img .image {
+.list-item .article-img{
   width: 150rpx;
   height: 150rpx;
   margin-left: 10rpx;

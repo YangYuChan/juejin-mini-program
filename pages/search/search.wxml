@@ -7,9 +7,18 @@
   </view>
   <swiper indicator-dots="true" autoplay="true" style='height:{{swiperHeight}}'>
   <block>
-    <swiper-item><image src="/img/2.jpg" class="slide-image" mode='widthFix'/></swiper-item>
-    <swiper-item><image src="/img/3.jpg" class="slide-image" mode='widthFix'/></swiper-item>
+    <swiper-item wx:for='{{bannerImgList}}' item='{{item}}' wx:key='{{index}}'>
+    <image src="{{item.screenshot}}" class="slide-image" mode='widthFix'/>
+    </swiper-item>
   </block>
 </swiper>
-<searchList></searchList>
+<view class='search-list'>
+  <view class='hot-title'>
+    <image src='/img/pin_hot.png' class='hot-icon'></image>
+    <text class='hot-text'>热门文章</text>
+  </view>
+  <view class='hot-list'>
+      <searchList propsItem='{{item}}'  wx:for='{{rankList}}'  wx:key='{{index}}'></searchList>
+  </view>
+</view>
 </view>

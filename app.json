@@ -1,12 +1,13 @@
 {
   "pages": [
+    "pages/search/search",
     "pages/index/index",
     "pages/login/login",
     
     
     "pages/xiaoce/xiaoce",
     "pages/user/user",
-    "pages/search/search",
+    
     "pages/feidian/feidian",
     
     "pages/launch/launch",

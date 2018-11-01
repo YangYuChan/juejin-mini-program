@@ -1,50 +1,25 @@
+<wxs module='filters' src='../../filter/filter.wxs'></wxs>
 <!-- 一条数据 -->
 <view class='index-list-item'>
   <view class='user-info'>
     <view class='user-info-left'>
-      <image class='user-photo' mode='widthFix' src='/img/qq.png'></image>
-      <text class='user-name'>webBella</text>
+      <image class='user-photo' mode='aspectFill' src='{{item.user.avatarLarge || "/img/default_avatar.png"}}'></image>
+      <text class='user-name'>{{item.user.username}}</text>
     </view>
-    <view class='user-classify'>java/掘金翻译计划</view>
+    <view class='user-classify'>{{filters.join(item.tags,'title','/')}}</view>
   </view>
   <view class='article-info'>
     <view class='article-text'>
-      <view class='article-title'>一个40岁老码农的人生总结</view>
-      <view class='article-intro'>奋斗没有意义，选择大于努力。 一个40岁老码农的人生总结 今年刚好 40 岁，在一家著名外企做到技术专家的位置，在亲戚朋友眼中，俨然已算半个“成功人士”，但内心深处，却无一刻不战战兢兢。我知道，自己就像一个风雨中的高跷人，哪怕一阵风，一个闪失，都会重重跌倒，甚至于再也爬不起来。…</view>
+      <view class='article-title'>{{item.title}}</view>
+      <view class='article-intro'>{{item.summaryInfo}}</view>
     </view>
-    <view class='article-image'>
-      <image class='image'mode='aspectFill' src='/img/entry_image_default.png'></image>
-    </view>
+      <image class='article-image' mode='aspectFill' src='{{item.screenshot}}' wx:if='{{item.screenshot}}'></image>
   </view>
   <view class='index-item-bottom'>
     <image class='like-icon' mode='widthFix' src='/img/ic_dynamic_collect.png'></image>
-    <text class='like-num'>3</text>
+    <text class='like-num'>{{item.collectionCount || '喜欢'}}</text>
     <image class='comment-icon' mode='widthFix' src='/img/ic_dynamic_comment.png'></image>
-    <text class='comment-num'>100</text>
-  </view>
-</view>
-
-<!-- end -->
-<!-- 一条数据 -->
-<view class='index-list-item'>
-  <view class='user-info'>
-    <view class='user-info-left'>
-      <image class='user-photo' mode='widthFix' src='/img/qq.png'></image>
-      <text class='user-name'>webBella</text>
-    </view>
-    <view class='user-classify'>java/掘金翻译计划</view>
-  </view>
-  <view class='article-info'>
-    <view class='article-text'>
-      <view class='article-title'>一个40岁老码农的人生总结</view>
-      <view class='article-intro'>奋斗没有意义，选择大于努力。 一个40岁老码农的人生总结 今年刚好 40 岁，在一家著名外企做到技术专家的位置，在亲戚朋友眼中，俨然已算半个“成功人士”，但内心深处，却无一刻不战战兢兢。我知道，自己就像一个风雨中的高跷人，哪怕一阵风，一个闪失，都会重重跌倒，甚至于再也爬不起来。…</view>
-    </view>
-  </view>
-  <view class='index-item-bottom'>
-    <image class='like-icon' mode='widthFix' src='/img/ic_dynamic_collect.png'></image>
-    <text class='like-num'>3</text>
-    <image class='comment-icon' mode='widthFix' src='/img/ic_dynamic_comment.png'></image>
-    <text class='comment-num'>100</text>
+    <text class='comment-num'>{{item.commentsCount || '评论'}}</text>
   </view>
 </view>
 

@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const config = getApp().globalData.config
+const config = app.globalData.config
 const utils = require('../../utils/util.js') //公共接口
 Page({
 
@@ -14,6 +14,8 @@ Page({
     logined:true, //是否显示去登录
     hotRecommendShow:true,  //是否显示热门推荐
     hotRecomment:[], //热门推荐显示三条数据
+    timeline:[],
+    rotate:'',  //刷新显示动画
 
   },
   //初始化
@@ -23,6 +25,7 @@ Page({
       auth,  //login里面保存的登录用户信息token、userId、clientId
       logined: auth 
     });
+    this.getEntryByTimeline(true);
     if (auth) { //如果已经登录
       this.getEntryByHotRecomment();  //显示热门推荐
     }
@@ -78,59 +81,166 @@ Page({
       
     })
   },
+  getBannerImgList() {
+    const auth = this.data.auth;
+    let url = `${config.bannerRequestUrl}/get_banner`;
+    wx.request({
+      url,
+      data: {
+        position: 'explore',
+        page: 0,
+        pageSize: 20,
+        platform: 'android',
+        device_id: auth.clientId,
+        client_id: auth.clientId,
+        token: auth.token,
+        src: 'android'
+      },
+      success: (res) => {
+        let data = res.data;
+        if (data.s === 1) {
+          let bannerImgList = (data.d && data.d.banner) || [];
+          wx.setStorage({
+            key: 'bannerImgList',
+            data: bannerImgList,
+          })
+        } else {
+          wx.showToast({
+            title: data.m.toString(),
+            icon: 'none'
+          })
+        }
+      },
+      fail: () => {
+        wx.showToast({
+          title: '网络出错，请稍微再试',
+          icon: 'none'
+        })
+      }
+    })
+  },
+  //首页列表
+  getEntryByTimeline(reload) {
+    const auth = this.data.auth; //获取 auth的用户信息
+    let timeline = this.data.timeline
+    let url = `${config.timelineRequestUrl}/get_entry_by_timeline`;
+    if(utils.isEmptyObject(timeline) || reload){
+      timeline = [{ verifyCreatedAt:''}]
+    }
+    let rankIndex = (timeline.slice(-1)[0].verifyCreatedAt) || ''
+    wx.request({
+      url: url,
+      data: {
+        src: 'web',
+        uid: auth.userId || '',
+        device_id: auth.clientId || '',
+        category: 'all',
+        recomment: 1,
+        before: rankIndex,
+        token: auth.token,
+        limit: this.data.COUNT
+      },
+      success: (res) => {
+        let data = res.data;
+        if (data.s === 1) {
+          wx.hideLoading();
+          let list = (data.d && data.d.entrylist) || [];
+          this.setData({
+            timeline: reload ? list : this.data.timeline.concat(list), //判断是否上拉加载更多
+          })
+        } else {
+          wx.showToast({
+            title: data.m.toString(),
+            icon: 'none'
+          })
+        }
+      },
+      fail: (error) => {
+        wx.showToast({
+          title: '网络出错，请稍后再试',
+          icon: 'none',
+        })
+      },
+      complete: () => {
+        wx.stopPullDownRefresh();//当处理完数据刷新后，wx.stopPullDownRefresh可以停止当前页面的下拉刷新
+      }
+
+    })
+  },
+  userFilterEntry(ids) {
+    const auth = this.data.auth;
+    let url = `${config.timelineRequestUrl}/user_filter_entry`;
+    
+    wx.request({
+      url,
+      data: {
+        src:'web',
+        uid:auth.userId,
+        device_id:auth.clientId,
+        client_id:auth.clientId,
+        token:auth.token,
+        entryId:ids.join('|'),
+      },
+      success: (res) => {
+        let data = res.data;
+        if(data.s === 1){
+          this.getEntryByHotRecomment();
+        } else {
+
+        }
+      },
+      fail: (error) => {
+        wx.showToast({
+          title: '网络出错，请稍微再试',
+          icon:'none'
+        })
+      }
+    })
+  },
+  refreshHot() {
+    this.setData({
+      rotate: 'rotate'
+    });
+    let timer = setTimeout(()=>{
+      this.setData({
+        rotate: ''
+      });
+      clearTimeout(timer)
+    },1000)
+    let hotRecomment = this.data.hotRecomment;
+    this.userFilterEntry(hotRecomment.map(item => {
+      return item.objectId
+    }))
+  },
+  closeHot() {
+    this.setData({
+      hotRecommendShow: false
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad() {
     this.init();
   },
- 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 页面显示/切入前台时触发
    */
-  onReady: function () {
-    
+  onShow() {
+    if (utils.pageReload(this.data.auth,[this.data.timeline])){
+      wx.startPullDownRefresh({}) //触发下拉刷新
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
-  },
-
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh() {
     this.init();
   },
-
   /**
-   * 页面上拉触底事件的处理函数
+   * 监听用户上拉触底事件
    */
-  onReachBottom: function () {
-    
+  onReachBottom() { 
+    this.getEntryByTimeline();
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
-  }
 })

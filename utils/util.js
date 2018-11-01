@@ -16,6 +16,7 @@ const formatNumber = n => {
 // 判断是否登录
 let ifLogined = () => {
   let auth = wx.getStorageSync('auth') || {}
+  console.log(auth);
   if (auth.token && auth.userId) {
     return auth;
   }
@@ -28,8 +29,28 @@ let isEmptyObject = (obj) => {
   }
   return true;
 }
+let pageReload = (scopeAuth,dataList) => {
+  let auth = ifLogined();
+  let dataEmpty = (list) => {
+    let empty = false;
+    let item = null;
+    for(let i=0;i<list.length;i++){
+      item = list[i];
+      if(isEmptyObject(item)){
+        empty = true;
+        break;
+      }
+    }
+    return empty
+  }
+  if((auth.token !== scopeAuth.token || auth.userId !== scopeAuth.userId) || dataEmpty(dataList)){
+    return true
+  }
+}
+
 module.exports = {
   formatTime: formatTime,
   ifLogined: ifLogined,
-  isEmptyObject: isEmptyObject
+  isEmptyObject: isEmptyObject,
+  pageReload: pageReload
 }

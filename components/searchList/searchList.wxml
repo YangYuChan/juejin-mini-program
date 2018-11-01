@@ -1,17 +1,10 @@
-<view class='search-list'>
-  <view class='hot-title'>
-    <image src='/img/pin_hot.png' class='hot-icon'></image>
-    <text class='hot-text'>热门文章</text>
-  </view>
-  <view class='hot-list'>
-    <view class='list-item' wx:for='{{5}}'>
-      <view class='article-text'>
-        <view class='article-name'>IntelliJ IDEA 新版发布：支持CPU火焰图，新增酷炫主题</view>
-        <view class='article-other'><text>37人喜欢 · 闪电侠 · 3小时前</text></view>
-      </view>
-      <view class='article-img'>
-      <image src='/img/1.jpg' class='image'></image>
-      </view>
+<wxs module="filters" src='../../filter/filter.wxs'></wxs>
+<view class='list-item' data-item='{{propsItem}}'>
+  <view class='article-text'>
+    <view class='article-name'>{{propsItem.title}}</view>
+    <view class='article-other'>
+      <text>{{propsItem.collectionCount}}人喜欢 · {{propsItem.user.username}} · {{filters.timeBefore(propsItem.createdAt)}}</text>
     </view>
   </view>
+  <image wx:if='{{propsItem.screenshot}}' src='{{propsItem.screenshot}}' class='article-img' mode='aspectFill'></image>
 </view>

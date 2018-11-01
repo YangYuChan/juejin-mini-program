@@ -34,3 +34,23 @@
   width: 100%;
   display: block
 }
+.search-list {
+  background-color: #ffffff;
+  margin-bottom: 20rpx;
+}
+.hot-title {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex: 1;
+  padding:24rpx 30rpx;
+  justify-content: flex-start;
+}
+
+.hot-title .hot-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+.hot-title .hot-text {
+  font-size: 32rpx;
+  margin-left: 14rpx;
+}

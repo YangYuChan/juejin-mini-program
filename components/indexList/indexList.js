@@ -1,10 +1,10 @@
-// components/index/indexList/indexList.js
+
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    item: {
+    item: {  //自定义属性名
       type: Object,
       value: {}
     },

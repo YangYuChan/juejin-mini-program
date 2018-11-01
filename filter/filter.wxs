@@ -1,3 +1,11 @@
+var join = function(arr,item,separator){
+  arr = arr || [];
+  //最多取前两个tag
+  return arr.slice(0,2).map(function(i,index){
+    return i[item];
+  }).join(separator);
+};
+
 var timeBefore = function (date) {
   if (!date) {
     return '';
@@ -25,5 +33,6 @@ var timeBefore = function (date) {
   }
 };
 module.exports = {
-  timeBefore: timeBefore
+  timeBefore: timeBefore,
+  join:join
 }

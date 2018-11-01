@@ -8,11 +8,17 @@
   </view>
   <view class='no-login-btn'>登录</view>
   </navigator>
-  <view class='index-hot'>
+  <view class='index-hot' wx:if='{{hotRecomment.length && hotRecommendShow}}'>
     <view class='search-list'>
   <view class='hot-title'>
+  <view class='hot-title-left'>
     <image src='/img/ic_hot_home.png' class='hot-icon'></image>
     <text class='hot-text'>热门推荐</text>
+    </view>
+    <view class='hot-title-right'>
+    <image catchtap='refreshHot' class='hot-icon {{rotate}}' src='/img/refresh_icon.png' mode='widthFix'></image>
+    <image catchtap='closeHot' class='hot-icon close' src='/img/chart_close.png' mode='widthFix'></image>
+    </view>
   </view>
   <view class='hot-list'>
     <view class='list-item' wx:for='{{hotRecomment}}' item='{{item}}' wx:key='{{index}}'>
@@ -35,6 +41,6 @@
 </view>
   </view>
   <view class='index-list'>
-    <indexList></indexList>
+    <indexList wx:for='{{timeline}}' item='{{item}}' wx:key='{{index}}'></indexList>
   </view>
 </view>

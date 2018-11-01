@@ -20,31 +20,31 @@
   display: flex;
   justify-content: space-between;
   padding-top: 26rpx;
+  align-items: center;
+}
+.article-text {
+  flex: 1;
 }
 .article-image {
-  margin-left: 16rpx;
-}
-.article-image .image {
   width: 136rpx;
   height: 136rpx;
+  margin-left: 16rpx;
 }
 .article-title {
   font-size: 32rpx;
-  height: 40rpx;
-  line-height: 40rpx;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  display:-webkit-box;
+   text-overflow: ellipsis;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
   margin-bottom: 20rpx;
 }
 .article-intro {
   display: -webkit-box;
-  overflow: hidden;
   text-overflow: ellipsis;
-  word-break: break-all;
   -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
   -webkit-line-clamp:2; /*控制多行文本的行数*/
+   overflow: hidden;
   padding-bottom: 8rpx;
 }
 .user-info .user-classify,
@@ -56,6 +56,7 @@
 .index-item-bottom {
   margin: 20rpx 0 0;
   display: flex;
+  align-items: center;
   justify-content: flex-start;
 }
 .index-item-bottom .like-icon,

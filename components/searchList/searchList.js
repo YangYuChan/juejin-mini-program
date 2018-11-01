@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    propsItem:{  //在父组件自定义的属性名
+      type:Object,
+      value:{}
+    }
   },
 
   /**
