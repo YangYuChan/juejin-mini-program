@@ -1,11 +1,11 @@
 <view class="container">
   <view class='user-top'>
     <view class='top-wrapper'>
-      <image src='/img/empty_avatar_user.png' mode='widthFix' class='user-photo'></image>
+      <image src='{{userInfo.avatarHd || "/img/empty_avatar_user.png"}}' mode='widthFix' class='user-photo'></image>
       <view class='user-info'>
         <view class='info'>
-          <view class='sign-in'>登录/注册</view>
-          <view class='job-info'>添加职位 @添加公司</view>
+          <view class='sign-in'>{{userInfo.username || "登录/注册"}}</view>
+          <view class='job-info'>{{userInfo.jobTitle || "添加职位"}} @{{userInfo.company || "添加公司"}}</view>
         </view>
         <image src='/img/profile_arrow.png' class='go' mode='widthFix'></image>
       </view>
@@ -18,7 +18,7 @@
         <image class='item-image' src='/img/ic_notification.png' mode='widthFix'></image>
         <view class='item-text'>
           <text class='font'>消息中心</text>
-          <text class='num'></text>
+          <text class='num' wx:if='{{userNotificationNum > 0}}'>{{userNotificationNum}}</text>
         </view>
       </view>
     <!-- end -->
@@ -27,7 +27,7 @@
         <image class='item-image' src='/img/ic_heart_entry_bottom_full.png' mode='widthFix'></image>
         <view class='item-text'>
           <text class='font'>我喜欢的</text>
-          <text class='num'>0篇</text>
+          <text class='num'>{{userInfo.collectedEntriesCount || 0}}篇</text>
         </view>
       </view>
     <!-- end -->
@@ -36,7 +36,7 @@
         <image class='item-image' src='/img/ic_collection_set.png' mode='widthFix'></image>
         <view class='item-text'>
           <text class='font'>收藏集</text>
-          <text class='num'>0个</text>
+          <text class='num'>{{userInfo.collectionSetCount || 0}}个</text>
         </view>
       </view>
     <!-- end -->
@@ -45,7 +45,7 @@
         <image class='item-image' src='/img/user_buy.png' mode='widthFix'></image>
         <view class='item-text'>
           <text class='font'>已购小册</text>
-          <text class='num'>0本</text>
+          <text class='num'>{{userInfo.postedEntriesCount || 0}}本</text>
         </view>
       </view>
     <!-- end -->
@@ -54,7 +54,7 @@
         <image class='item-image' src='/img/user_liked_pin.png' mode='widthFix'></image>
         <view class='item-text'>
           <text class='font'>赞过的沸点</text>
-          <text class='num'>0个</text>
+          <text class='num'>{{userInfo.likedPinCount || 0}}个</text>
         </view>
       </view>
     <!-- end -->
@@ -63,7 +63,7 @@
         <image class='item-image' src='/img/view.png' mode='widthFix'></image>
         <view class='item-text'>
           <text class='font'>阅读过的文章</text>
-          <text class='num'>0篇</text>
+          <text class='num'>{{userInfo.viewedEntriesCount || 0}}篇</text>
         </view>
       </view>
     <!-- end -->
@@ -72,7 +72,7 @@
         <image class='item-image' src='/img/tag.png' mode='widthFix'></image>
         <view class='item-text'>
           <text class='font'>标签管理</text>
-          <text class='num'>0个</text>
+          <text class='num'>{{userInfo.subscribedTagsCount || 0}}个</text>
         </view>
       </view>
     <!-- end -->

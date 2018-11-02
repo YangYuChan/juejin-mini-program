@@ -42,6 +42,8 @@ App({
       bannerRequestUrl: 'https://banner-storage-ms.juejin.im/v1',
       xiaoceRequestUrl: 'https://xiaoce-timeline-api-ms.juejin.im/v1',
       shortMsgMsRequestUrl: 'https://short-msg-ms.juejin.im/v1',
+      apiRequestUrl: 'https://user-storage-api-ms.juejin.im/v1',
+      notifyRequestUrl: 'https://ufp-api-ms.juejin.im/v1',
     }
   }
 })

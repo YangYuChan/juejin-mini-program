@@ -7,13 +7,14 @@
 }
 .top-wrapper,
 .user-info {
+  flex: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 180rpx;
 }
 .user-info {
-  width: 78%;
+  margin-left: 50rpx;
 }
 .top-wrapper .user-photo {
   width: 90rpx;
@@ -37,7 +38,7 @@
 .operator-item {
   border-bottom: 1px solid #eee;
   display: flex;
-  padding: 20rpx 40rpx;
+  padding: 24rpx 40rpx;
   justify-content: space-between;
   align-items: center;
 }
