@@ -1,0 +1,26 @@
+<wxs module='filters' src='../../filter/filter.wxs'></wxs>
+<view class="container">
+  <view class='hot-recommend'>
+    <swiper
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+        <block wx:for="{{recommendList}}" item='{{item}}' wx:key="{{index}}">
+          <swiper-item>
+            <view class="swiper-item">
+              <view class='hot-title'>
+                <image src='/img/pin_hot.png' class='hot-icon' mode='widthFix'></image>
+                <text class='hot-text'>热门沸点</text>
+              </view>
+              <view class='hot-content'>
+              <view class='content'> {{item.content}}</view>
+              <view>
+              <image wx:if='{{item.pictures && item.pictures.length}}' src='{{item.pictures[0]}}' class='content-image' mode='aspectFill'></image>
+              </view>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+  </view>
+  <feidianlist wx:for='{{list}}' item='{{item}}' wx:key='{{index}}'></feidianlist>
+</view>
