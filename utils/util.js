@@ -25,9 +25,10 @@ let ifLogined = () => {
 
 let isEmptyObject = (obj) => {
   for(let i in obj){
-    return false;
+    console.log(obj[i])
+    return false;  //如果对象不为空，返回false
   }
-  return true;
+  return true;  // 默认返回 true
 }
 let pageReload = (scopeAuth,dataList) => {
   let auth = ifLogined();

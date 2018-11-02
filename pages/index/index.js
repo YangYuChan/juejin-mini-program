@@ -20,6 +20,9 @@ Page({
   },
   //初始化
   init(){
+    wx.showLoading({
+      title: '数据加载中',
+    })
     let auth = utils.ifLogined();  //返回true/false
     this.setData({
       auth,  //login里面保存的登录用户信息token、userId、clientId
@@ -119,6 +122,7 @@ Page({
       }
     })
   },
+  // 翻页：将最后一条的 verifyCreatedAt 赋值给 before 字段即可
   //首页列表
   getEntryByTimeline(reload) {
     const auth = this.data.auth; //获取 auth的用户信息

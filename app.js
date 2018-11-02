@@ -41,6 +41,7 @@ App({
       timelineRequestUrl: 'https://timeline-merger-ms.juejin.im/v1', //热门推荐
       bannerRequestUrl: 'https://banner-storage-ms.juejin.im/v1',
       xiaoceRequestUrl: 'https://xiaoce-timeline-api-ms.juejin.im/v1',
+      shortMsgMsRequestUrl: 'https://short-msg-ms.juejin.im/v1',
     }
   }
 })

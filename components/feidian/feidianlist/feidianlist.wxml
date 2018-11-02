@@ -1,15 +1,17 @@
-<view class='feidian-list'>
+<wxs module='filters' src='../../../filter/filter.wxs'></wxs>
   <!-- 一条数据 -->
   <view class='feidian-item'>
     <view class='item-top'>
-     <image src='/img/photo.png' class='photo' mode='aspectFit'></image>
+     <image src='{{item.user.avatarLarge}}' class='photo'></image>
       <view class='auth-other'>
         <view class='auth-info'>
-          <view class='auth-name'>xiaojingdou</view>
+          <view class='auth-name'>{{item.user.username}}</view>
           <view class='auth-job'>
-            <text>前端工程师</text>
-            <text>@火星情报局</text>
-            <text>56分钟前</text>
+            <text wx:if='{{item.user.jobTitle}}'>{{item.user.jobTitle}}</text>
+            
+            <text wx:if='{{item.user.jobTitle && item.user.company}}'>@{{item.user.company}}</text>
+            <text wx:if='{{item.user.jobTitle}}'> · </text>
+            <text>{{filters.timeBefore(item.updatedAt)}}</text>
           </view>
         </view>
       <button type="default" size="mini"  plain="false"
@@ -17,19 +19,32 @@
         </view>
     </view>
     <view class='item-content'>
-      <view class='content'>华为主题商店付费排名第一</view>
-      <view class='image-wrapper'>
-        <image src='/img/1.jpg' class='image-item' mode='widthFix'></image>
+      <view class='content {{intro ? "intro" : ""}}'>{{item.content}}</view>
+      <view class='topic' wx:if='{{item.urlTitle || item.url}}'>
+        <view class='desc'>
+          <view>{{item.urlTitle}}</view>
+          <view class='url'>{{filters.getUrlHostName(item.url)}}</view>
+        </view>
+        <image wx:if='{{item.urlPic}}' mode='aspectFill' src='{{item.urlPic}}'></image>
+      </view>
+      <view class='image-wrapper image-list' wx:if='{{item.pictures && item.pictures.length > 1}}'>
+        <image wx:for='{{item.pictures}}' wx:for-item = 'i' wx:key='{{index}}' src='{{i}}' mode='aspectFill' class='image-item'></image>
+      </view>
+      <view class='image-wrapper' wx:if='{{item.pictures && item.pictures.length === 1}}'>
+        <image src='{{item.pictures[0]}}' class='image-item' mode='widthFix'></image>
+      </view>
+      <view class='tags' wx:if='{{item.topic && item.topic.title}}'>
+        {{item.topic.title}}
       </view>
     </view>
     <view class='item-bottom'>
       <view class='bottom-item support'>
         <image class='image' src='/img/zan_grey_feidian3.png' mode='widthFix'></image>
-        <text class='num'>1</text>
+        <text class='num'>{{item.likedCount}}</text>
       </view>
       <view class='bottom-item comment'>
         <image class='image' src='/img/fd_reply.png' mode='widthFix'></image>
-        <text class='num'>1</text>
+        <text class='num'>{{item.commentCount}}</text>
       </view>
       <view class='bottom-item share'>
         <image class='image' src='/img/fd_share.png' mode='widthFix'></image>
@@ -37,46 +52,3 @@
     </view>
   </view>
   <!-- end -->
-   <!-- 一条数据 -->
-  <view class='feidian-item'>
-    <view class='item-top'>
-     <image src='/img/photo.png' class='photo' mode='aspectFit'></image>
-      <view class='auth-other'>
-        <view class='auth-info'>
-          <view class='auth-name'>xiaojingdou</view>
-          <view class='auth-job'>
-            <text>前端工程师</text>
-            <text>@火星情报局</text>
-            <text>56分钟前</text>
-          </view>
-        </view>
-      <button type="default" size="mini"  plain="false"
-        hover-class="other-button-hover" class='follow'> 关注 </button>
-        </view>
-    </view>
-    <view class='item-content'>
-      <view class='content'>华为主题商店付费排名第一</view>
-      <view class='image-wrapper image-list'>
-        <image src='/img/1.jpg' class='image-item' mode='widthFix'></image>
-        <image src='/img/1.jpg' class='image-item' mode='widthFix'></image>
-        <image src='/img/1.jpg' class='image-item' mode='widthFix'></image>
-        <image src='/img/1.jpg' class='image-item' mode='widthFix'></image>
-        <image src='/img/1.jpg' class='image-item' mode='widthFix'></image>
-      </view>
-    </view>
-    <view class='item-bottom'>
-      <view class='bottom-item support'>
-        <image class='image' src='/img/zan_grey_feidian3.png' mode='widthFix'></image>
-        <text class='num'>1</text>
-      </view>
-      <view class='bottom-item comment'>
-        <image class='image' src='/img/fd_reply.png' mode='widthFix'></image>
-        <text class='num'>1</text>
-      </view>
-      <view class='bottom-item share'>
-        <image class='image' src='/img/fd_share.png' mode='widthFix'></image>
-      </view>
-    </view>
-  </view>
-  <!-- end -->
-</view>

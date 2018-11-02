@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/feidian/feidian",
     "pages/search/search",
     "pages/index/index",
     "pages/login/login",
@@ -8,7 +9,7 @@
     "pages/xiaoce/xiaoce",
     "pages/user/user",
     
-    "pages/feidian/feidian",
+    
     
     "pages/launch/launch",
     "pages/logs/logs"

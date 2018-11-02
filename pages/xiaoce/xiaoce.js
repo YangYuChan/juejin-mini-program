@@ -19,7 +19,7 @@ Page({
     this.setData({
       auth,
     })
-    this.getXiaoCe()
+    this.getXiaoCe(true)
   },
   getXiaoCe(reload) {
     let auth = this.data.auth
@@ -35,18 +35,18 @@ Page({
       },
       success: (res) => {
         let data = res.data
-        if(data.s === 1) {
+        if(data.s === 1) { //说明对象不为空
           wx.hideLoading()
-          let list = data.d
-          if(!utils.isEmptyObject(list)){
+          let list = data.d //有数据
+          // if(!utils.isEmptyObject(list) || reload){ //因为接口已经做了是否为空的判断，所以其实这个地方做判断也没什么意义
             let pageNum = this.data.pageNum + 1
             this.setData({
               pageNum,
               xiaoceList: reload ? list : this.data.xiaoceList.concat(list)
             })
-          }
+          // }
         } else {
-          if(data.s === 2){
+          if(data.s === 2) { //返回对象为空
             this.setData({
               noResult:true
             })
