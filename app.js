@@ -40,6 +40,7 @@ App({
       loginRequestUrlByEMail: 'https://juejin.im/auth/type/email',
       timelineRequestUrl: 'https://timeline-merger-ms.juejin.im/v1', //热门推荐
       bannerRequestUrl: 'https://banner-storage-ms.juejin.im/v1',
+      xiaoceRequestUrl: 'https://xiaoce-timeline-api-ms.juejin.im/v1',
     }
   }
 })

@@ -1,28 +1,15 @@
 <view class='container'>
   <view class='xc-list'>
   <!-- item -->
-    <view class='xc-item' wx:for='{{3}}'>
-      <image class='xc-image' src='/img/xiaoce.png'></image>
+    <view class='xc-item' wx:for='{{xiaoceList}}' wx:key='{{index}}' data-id='{{item._id}}'>
+      <image class='xc-image' src='{{item.img}}'></image>
       <view class='xc-message'>
         <view class='xc-middle'>
-          <view class='xc-name'>Python 实战：用 Scrapyd 打造个人化的爬虫部署管理控制台</view>
-          <view class='xc-auth'>韦世东</view>
-          <view class='xc-other'><text class='num'>22小节</text><text>2320人已购买</text></view>
+          <view class='xc-name'>{{item.title}}</view>
+          <view class='xc-auth'>{{item.userData.username}}</view>
+          <view class='xc-other'><text class='num'>{{item.lastSectionCount}}小节</text><text>{{item.buyCount}}人已购买</text></view>
         </view>
-        <view class='xc-price'>￥29.9</view>
-      </view>
-    </view>
-    <!-- end -->
-    <!-- item -->
-    <view class='xc-item' wx:for='{{3}}'>
-      <image class='xc-image' src='/img/xiaoce.png'></image>
-      <view class='xc-message'>
-        <view class='xc-middle'>
-          <view class='xc-name'>个人化的爬虫部署管理</view>
-          <view class='xc-auth'>韦世东</view>
-          <view class='xc-other'><text class='num'>22小节</text><text>2320人已购买</text></view>
-        </view>
-        <view class='xc-price'>￥29.9</view>
+        <view class='xc-price'>￥{{item.price}}</view>
       </view>
     </view>
     <!-- end -->
