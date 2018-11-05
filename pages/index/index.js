@@ -247,4 +247,9 @@ Page({
   onReachBottom() { 
     this.getEntryByTimeline();
   },
+
+  //查看详情
+  goPostDetails(e){
+    utils.toPostDetail(e);
+  }
 })

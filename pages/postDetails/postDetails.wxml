@@ -1,0 +1,24 @@
+<wxs module ='filters' src='../../filter/filter.wxs'></wxs>
+<view class='container'>
+  <view class='topimg'><image src='{{postInfo.screenshot}}'></image></view>
+  <view class='article-content'>
+    <view class='user-info'>
+      <image src='{{(postInfo.user && postInfo.user.avatarLarge) || "/img/default_avatar.png"}}' mode='aspectFill' class='user-photo'></image>
+      <view class='user-text'>
+        <view class='user-name'>{{postInfo.user && postInfo.user.username}}</view>
+        <view class='user-other'><text class='time'>{{filters.timeBefore(postInfo.createdAt)}}</text>
+        <text>阅读 {{postInfo.viewsCount}}</text></view>
+      </view>
+    </view>
+    <view class='article-details'>
+      <view class='title'>{{postInfo.title}}</view>
+      <view class='is-original'wx-if='{{t==="post"}}'>
+        <text class='original' >原创</text>
+        <text class='author'>{{postInfo.user && postInfo.user.username}}</text>
+      </view>
+      <view class='details'>
+
+      </view>
+    </view>
+  </view>
+</view>

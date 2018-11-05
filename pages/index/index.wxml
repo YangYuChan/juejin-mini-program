@@ -21,7 +21,7 @@
     </view>
   </view>
   <view class='hot-list'>
-    <view class='list-item' wx:for='{{hotRecomment}}' item='{{item}}' wx:key='{{index}}'>
+    <view class='list-item' wx:for='{{hotRecomment}}' item='{{item}}' wx:key='{{index}}' data-item='{{item}}' catchtap='goPostDetails'>
       <view class='article-text'>
         <view class='article-name'>{{item.title}}</view>
         <view class='article-other'>

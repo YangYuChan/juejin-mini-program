@@ -44,6 +44,7 @@ App({
       shortMsgMsRequestUrl: 'https://short-msg-ms.juejin.im/v1',
       apiRequestUrl: 'https://user-storage-api-ms.juejin.im/v1',
       notifyRequestUrl: 'https://ufp-api-ms.juejin.im/v1',
+      postStorageApiMsRequestUrl: 'https://post-storage-api-ms.juejin.im/v1',
     }
   }
 })
