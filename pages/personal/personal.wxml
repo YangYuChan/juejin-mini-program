@@ -1,0 +1,81 @@
+<view class="container">
+  <view class='user-top'>
+    <view class='top-wrapper'>
+      <image src='{{userInfo.avatarHd || "/img/empty_avatar_user.png"}}' mode='aspectFill' class='user-photo'></image>
+      <view class='user-info'>
+        <view class='info'>
+          <view class='sign-in'>{{userInfo.username}}</view>
+          <view class='job-info'>{{userInfo.jobTitle}}</view>
+        </view>
+        <image src='/img/profile_arrow.png' class='go' mode='widthFix'></image>
+      </view>
+    </view>
+    <view class='follow-box'>
+      <view class='follow-left'>
+        <view class='follow'>
+          <view class='num'>{{userInfo.followeesCount}}</view>
+          <view>关注</view>
+        </view>
+        <view class='follow'>
+          <view class='num'>{{userInfo.followersCount}}</view>
+          <view>关注者</view>
+        </view>
+      </view>
+      <view class='follow-right'>
+        <image src='/img/ic_dynamic_vote.png' mode='widthFix'></image>
+      </view>
+    </view>
+  </view>
+  <view class='user-content'>
+    <view class='user-list'>
+    <!-- item -->
+      <view class='operator-item'>
+        <view class='item-text'>
+          <text class='font'>动态</text>
+          <text class='num' wx:if='{{userNotificationNum > 0}}'>{{userNotificationNum}}</text>
+        </view>
+      </view>
+    <!-- end -->
+    </view>
+    <view class='user-other'>
+      <view class='operator-item'>
+        <view class='item-text'>
+          <text class='font'>沸点</text>
+          <text class='num'>{{userInfo.pinCount || 0}}</text>
+          
+        </view>
+      </view>
+      <view class='operator-item'>
+        <view class='item-text'>
+          <text class='font'>原创文章</text>
+          <text class='num'>{{userInfo.postedPostsCount}}</text>
+          
+        </view>
+      </view>
+      <view class='operator-item'>
+        <view class='item-text'>
+          <text class='font'>收藏集</text>
+          <text class='num'>{{userInfo.collectionSetCount}}</text>
+          
+        </view>
+      </view>
+    </view>
+
+        <view class='user-other'>
+      <view class='operator-item'>
+        <view class='item-text'>
+          <text class='font'>喜欢的文章</text>
+          <text class='num'>{{userInfo.collectedEntriesCount}}</text>
+          
+        </view>
+      </view>
+      <view class='operator-item'>
+        <view class='item-text'>
+          <text class='font'>关注的标签</text>
+          <text class='num'>{{userInfo.subscribedTagsCount}}</text>
+          
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

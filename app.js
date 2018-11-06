@@ -45,6 +45,8 @@ App({
       apiRequestUrl: 'https://user-storage-api-ms.juejin.im/v1',
       notifyRequestUrl: 'https://ufp-api-ms.juejin.im/v1',
       postStorageApiMsRequestUrl: 'https://post-storage-api-ms.juejin.im/v1',
+      entryViewStorageApiMsRequestUrl: 'https://entry-view-storage-api-ms.juejin.im/v1',
+      lccroApiMsRequestUrl: 'https://lccro-api-ms.juejin.im/v1',
     }
   }
 })

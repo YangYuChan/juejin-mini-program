@@ -1,7 +1,7 @@
 <wxs module='filters' src='../../filter/filter.wxs'></wxs>
 <!-- 一条数据 -->
-<view class='index-list-item'>
-  <view class='user-info'>
+<view class='index-list-item' catchtap='toPostDetail' data-item='{{item}}'>
+  <view class='user-info' catchtap='toPerson' data-item='{{item}}'>
     <view class='user-info-left'>
       <image class='user-photo' mode='aspectFill' src='{{item.user.avatarLarge || "/img/default_avatar.png"}}'></image>
       <text class='user-name'>{{item.user.username}}</text>

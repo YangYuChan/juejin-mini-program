@@ -21,6 +21,26 @@ let ifLogined = () => {
   }
   return false;
 }
+let navigatItem = (e) => {
+  const url = e.currentTarget.dataset.url || '/pages/index/index'
+  const open = e.currentTarget.dataset.open
+  const toUrl = () => {
+    wx.navigateTo({
+      url,
+    })
+  }
+  if(open){
+    toUrl()
+  } else {
+    if(ifLogined){
+      toUrl()
+    } else {
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+    }
+  }
+}
 
 let isEmptyObject = (obj) => {
   for(let i in obj){
@@ -80,5 +100,6 @@ module.exports = {
   isEmptyObject: isEmptyObject,
   pageReload: pageReload,
   getPostIdByOriginalUrl: getPostIdByOriginalUrl,
-  toPostDetail: toPostDetail
+  toPostDetail: toPostDetail,
+  navigatItem: navigatItem,
 }

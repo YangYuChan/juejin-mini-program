@@ -1,4 +1,5 @@
 const config = getApp().globalData.config
+const WxParse = require('../../wxParse/wxParse.js')
 const utils = require('../../utils/util.js')
 Page({
 
@@ -15,7 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (query) {
-    console.log(query) //{postId:"5bdec8dce51d454a1b58bcb1",type:"post"}
+    //console.log(query) //{postId:"5bdec8dce51d454a1b58bcb1",type:"post"}
     const auth = utils.ifLogined();
       this.setData({
         auth,
@@ -26,7 +27,11 @@ Page({
       t,
     })
     if(t === 'post') {
+      this.getDetails(id, 1);
       this.getDetails(id, 2);
+    } else {
+      this.getDetailsView(id);
+      this.getEntryByIds(id)
     }
   },
   getDetails(postId,t) {
@@ -47,7 +52,7 @@ Page({
         if(data.s === 1) {
           if( t === 1){
             let article = (data.d && data.d.content) || ''
-            
+            WxParse.wxParse('article', 'html', article, this)
           } else {
             this.setData({
               postInfo: data.d || {}
@@ -69,6 +74,74 @@ Page({
           icon: 'none'
         })
       }
+    })
+  },
+  getDetailsView(entryId) {
+    const auth = this.data.auth;
+    const url = `${config.entryViewStorageApiMsRequestUrl}/getEntryView`
+    wx.request({
+      url,
+      data: {
+        device_id: auth.clientId,
+        token: auth.token,
+        src: 'web',
+        entryId,
+      },
+      success: (res) => {
+        let data = res.data;
+        if (data.s === 1) {
+            let article = (data.d && data.d.content) || ''
+            WxParse.wxParse('article', 'html', article, this)
+          } else {
+            wx.showToast({
+              title: data.m.toString(),
+              icon: 'none',
+            })
+          }
+      },
+      fail: () => {
+        wx.showToast({
+          title: '网络出错，请稍后再试',
+          icon: 'none'
+        })
+      }
+    })
+  },
+  // 获取 entry 概要
+  getEntryByIds(entryId) {
+    const auth = this.data.auth
+    wx.request({
+      url: `${config.timelineRequestUrl}/get_entry_by_ids`,
+      data: {
+        uid: auth.userId,
+        device_id: auth.clientId,
+        token: auth.token,
+        src: 'web',
+        entryIds: entryId,
+      },
+      success: (res) => {
+        let data = res.data
+        if (data.s === 1) {
+          let entrylist = (data.d && data.d.entrylist) || []
+          this.setData({
+            postInfo: entrylist[0] || {},
+          })
+          wx.setNavigationBarTitle({
+            title: (entrylist[0].user && entrylist[0].user.username) || '掘金'
+          })
+        } else {
+          wx.showToast({
+            title: data.m.toString(),
+            icon: 'none',
+          })
+        }
+      },
+      fail: () => {
+        wx.showToast({
+          title: '网路开小差，请稍后再试',
+          icon: 'none',
+        })
+      },
     })
   },
   /**

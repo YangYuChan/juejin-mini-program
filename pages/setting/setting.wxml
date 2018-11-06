@@ -1,0 +1,38 @@
+<view class="container">
+  <view class='user-content'>
+    <view class='user-other'>
+      <view class='operator-item'>
+        <view class='item-text'>
+          <text class='font'>邮箱</text>
+          <text class='num'>{{userInfo.email}}</text>
+          
+        </view>
+      </view>
+      <view class='operator-item'>
+        <view class='item-text'>
+          <text class='font'>手机号</text>
+          <text class='num'>{{userInfo.mobilePhoneNumber}}</text>
+          
+        </view>
+      </view>
+    </view>
+
+        <view class='user-other'>
+      <view class='operator-item'>
+        <view class='item-text'>
+          <text class='font'>关于</text>
+        </view>
+      </view>
+   
+    </view>
+    
+        <view class='user-other' catchtap='signOut'>
+      <view class='operator-item '>
+        <view class='item-text signout'>
+          <text class='font '>退出登录</text>
+        </view>
+      </view>
+   
+    </view>
+  </view>
+</view>

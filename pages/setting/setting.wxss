@@ -1,0 +1,31 @@
+.user-other {
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.operator-item {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  padding: 24rpx 40rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.operator-item .item-image {
+  width: 42rpx;
+}
+.operator-item .item-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.operator-item .item-text .font {
+  font-size: 32rpx;
+}
+.operator-item .item-text .num {
+  font-size: 24rpx;
+  color: #abb4bf
+}
+.operator-item .signout {
+  justify-content: center;
+  color: #bb0000
+}

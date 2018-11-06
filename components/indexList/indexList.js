@@ -1,4 +1,4 @@
-
+const utils = require('../../utils/util.js')
 Component({
   /**
    * 组件的属性列表
@@ -21,6 +21,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    toPostDetail(e) {
+      utils.toPostDetail(e)
+    },
+    toPerson(e) {
+      let item = e.currentTarget.dataset.item;
+      wx.navigateTo({
+        url: `/pages/personal/personal?thirduid=${item.user.objectId}`,
+      })
+    },
   }
 })

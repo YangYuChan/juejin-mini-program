@@ -1,5 +1,5 @@
 <view class="container">
-  <view class='user-top'>
+  <view class='user-top'  catchtap='navigatItem' data-url='/pages/personal/personal'>
     <view class='top-wrapper'>
       <image src='{{userInfo.avatarHd || "/img/empty_avatar_user.png"}}' mode='widthFix' class='user-photo'></image>
       <view class='user-info'>

@@ -1,0 +1,81 @@
+.user-top {
+  margin: 20rpx 0;
+  background-color: #fff;
+}
+.top-wrapper {
+  padding: 0 40rpx;
+}
+.top-wrapper,
+.user-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 180rpx;
+}
+.user-info {
+  margin-left: 50rpx;
+}
+.info {
+  height: 90rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.top-wrapper .user-photo {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 100%
+}
+.user-info .go {
+  width: 22rpx;
+}
+.user-list,
+.user-other {
+  background-color: #fff;
+  margin: 0 0 20rpx;
+}
+.operator-item {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  padding: 24rpx 40rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.operator-item .item-image {
+  width: 42rpx;
+}
+.operator-item .item-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.operator-item .item-text .font {
+  font-size: 32rpx;
+}
+.operator-item .item-text .num {
+  font-size: 24rpx;
+  color: #abb4bf
+}
+.follow-box {
+  padding: 0 30rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.follow-left {
+  display: flex;
+  justify-content: space-between;
+}
+.follow {
+  margin-right: 120rpx;
+  color: #999;
+  font-size: 24rpx;
+}
+.follow .num {
+  color: #333;
+  font-size: 28rpx;
+}
+.follow-right image {
+  width: 60rpx;
+}
